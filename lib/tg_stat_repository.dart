@@ -8,11 +8,14 @@ class TgstatRepository {
   TgstatRepository({
     required String token,
     required Logger logger,
+    Object Function(String)? errorFactory,
   })  : _logger = logger,
-        _token = token;
+        _token = token,
+        _errorFactory = errorFactory;
 
   final String _token;
   final Logger _logger;
+  final Object Function(String)? _errorFactory;
 
   /// Returns tgstat verification code that should be used at callback url for
   /// verification.
@@ -142,9 +145,8 @@ class TgstatRepository {
 
   void _throwTgstatExceptionOnError(TgstatResponseTemplate template) {
     if (template.status == 'error') {
-      // throw TgstatException(
-      //   message: template.error!,
-      // );
+      throw _errorFactory?.call(template.error ?? '') ??
+          Exception(template.error ?? '');
     }
   }
 }
