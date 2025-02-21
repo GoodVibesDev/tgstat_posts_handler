@@ -145,6 +145,7 @@ class TgstatRepository {
 
   void _throwTgstatExceptionOnError(TgstatResponseTemplate template) {
     if (template.status == 'error') {
+      // ignore: only_throw_errors
       throw _errorFactory?.call(template.error ?? '') ??
           Exception(template.error ?? '');
     }

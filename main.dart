@@ -7,36 +7,38 @@ import 'package:logger/logger.dart';
 import 'package:postgres/postgres.dart';
 import 'package:tgstat_posts_handler/database.dart';
 import 'package:tgstat_posts_handler/hive_cache.dart';
+import 'package:tgstat_posts_handler/model/model.dart';
 import 'package:tgstat_posts_handler/tg_stat_repository.dart';
 
-const codeInstanceName = 'code';
+String publicUrl = '';
 
 Future<void> init(InternetAddress ip, int port) async {
-  final token = Platform.environment['TGSTAT_TOKEN'];
-  if (token == null) {
-    throw Exception('TGSTAT_TOKEN is not provided');
-  }
+  publicUrl = Platform.environment['PUBLIC_URL'] ??
+      (throw Exception('PUBLIC_URL is not provided'));
 
-  Hive.init('storage/hive');
+  final token = Platform.environment['TGSTAT_TOKEN'] ??
+      (throw Exception('TGSTAT_TOKEN is not provided'));
 
-  final logger = Logger();
-
-  // TODO(sergsavchuk): implement reconnection ?
-  final connection = await Connection.open(
-    Endpoint(
-      host: 'localhost',
-      database: 'postgres',
-      username: 'user',
-      password: 'pass',
-    ),
+  final endpoint = Endpoint(
+    host: Platform.environment['POSTGRES_HOST'] ??
+        (throw Exception('POSTGRES_HOST is not provided')),
+    database: Platform.environment['POSTGRES_DB'] ??
+        (throw Exception('POSTGRES_DB is not provided')),
+    username: Platform.environment['POSTGRES_USER'] ??
+        (throw Exception('POSTGRES_USER is not provided')),
+    password: Platform.environment['POSTGRES_PASSWORD'] ??
+        (throw Exception('POSTGRES_PASSWORD is not provided')),
   );
 
+  Hive.init('storage/hive');
   final hiveCache = HiveCache();
   await hiveCache.init();
 
+  final logger = Logger();
+
   GetIt.I
     ..registerSingleton<Logger>(logger)
-    ..registerSingleton<Database>(Database(connection))
+    ..registerSingleton<Database>(Database(logger, endpoint))
     ..registerSingleton<HiveCache>(hiveCache)
     ..registerSingleton<TgstatRepository>(
       TgstatRepository(token: token, logger: logger),
@@ -52,16 +54,10 @@ Future<HttpServer> run(Handler handler, InternetAddress ip, int port) async {
 }
 
 Future<void> _setupTgstatCallback() async {
-  // TODO(sergsavchuk): serverip:serverport/
-  const callbackUrl = '';
-
   final tgstatCallback =
-      await GetIt.I.get<TgstatRepository>().setCallbackUrl(callbackUrl);
+      await GetIt.I.get<TgstatRepository>().setCallbackUrl(publicUrl);
 
-  if (tgstatCallback != null) {
-    GetIt.I.registerSingleton<String>(
-      tgstatCallback.code,
-      instanceName: codeInstanceName,
-    );
-  }
+  if (tgstatCallback == null) exit(1);
+
+  GetIt.I.registerSingleton<TgstatCallbackUrl>(tgstatCallback);
 }

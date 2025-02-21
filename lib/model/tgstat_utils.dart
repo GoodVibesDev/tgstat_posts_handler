@@ -1,15 +1,7 @@
 import 'package:tgstat_posts_handler/model/model.dart';
 
-extension TgstatSubscriptionExtension on TgstatSubscription {
-  Subscription toSerializableModel() => Subscription(
-        subscriptionId: id,
-        keyword: keyword.query,
-        active: true,
-      );
-}
-
 extension TgstateEventExtension on TgstatEvent {
-  Post toSerializableModel({
+  Post toPost({
     required int channelId,
     required int subscriptionId,
   }) =>
@@ -26,7 +18,7 @@ extension TgstateEventExtension on TgstatEvent {
 }
 
 extension TgstatChannelExtension on TgstatChannel {
-  Channel toSerializableModel({
+  Channel toChannel({
     required int postsCount,
     required int relevantPostsCount,
     required bool isActive,
@@ -40,8 +32,4 @@ extension TgstatChannelExtension on TgstatChannel {
         isEnemy: false,
         tgstatId: id,
       );
-}
-
-extension TgstatPostExtension on TgstatPost {
-  int get tgId => int.parse(link.split('/').last);
 }
