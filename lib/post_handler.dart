@@ -54,6 +54,8 @@ class PostHandler {
           ),
         );
 
+        _logger.i('Created post: ${newPost.id}');
+
         await Future.wait([
           _database.channelIncreasePostsCount(channel),
 
@@ -82,6 +84,8 @@ class PostHandler {
       );
 
       if (forwardedPost != null) {
+        _logger.i('Found forwarded post: ${forwardedPost.id}');
+
         await _handleForwardedOrCopiedPost(
           event.post.date,
           forwardedPost.id!,
@@ -103,6 +107,8 @@ class PostHandler {
       final postText = _hiveCache.getFromCache(_postTextKey(post.id!));
 
       if (_postsSimilar(event.post.text, postText ?? '')) {
+        _logger.i('Found similar post');
+
         await _handleForwardedOrCopiedPost(event.post.date, post.id!);
         return true;
       }
