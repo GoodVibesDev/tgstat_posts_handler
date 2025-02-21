@@ -25,5 +25,9 @@ Future<Response> onRequest(RequestContext context) async {
     return Response(statusCode: 500);
   }
 
-  return Response(body: GetIt.I.get<TgstatCallbackUrl>().code);
+  final code = GetIt.I.isRegistered<TgstatCallbackUrl>()
+      ? GetIt.I.get<TgstatCallbackUrl>().code
+      : '';
+
+  return Response(body: code);
 }
