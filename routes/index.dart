@@ -18,6 +18,7 @@ Future<Response> onRequest(RequestContext context) async {
   }
 
   final body = await utf8.decodeStream(context.request.bytes());
+  logger.i('Received body: $body');
   try {
     await handlersPool.handlePost(body);
   } catch (e) {
