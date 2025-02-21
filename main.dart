@@ -14,7 +14,7 @@ import 'package:tgstat_posts_handler/tg_stat_repository.dart';
 String publicUrl = '';
 
 Future<void> init(InternetAddress ip, int port) async {
-  final logger = Logger(filter: ProductionFilter())..e('Initializing server');
+  final logger = Logger(filter: ProductionFilter())..i('Initializing server');
 
   publicUrl = Platform.environment['PUBLIC_URL'] ??
       (throw Exception('PUBLIC_URL is not provided'));
@@ -25,6 +25,8 @@ Future<void> init(InternetAddress ip, int port) async {
   final endpoint = Endpoint(
     host: Platform.environment['POSTGRES_HOST'] ??
         (throw Exception('POSTGRES_HOST is not provided')),
+    port: int.tryParse(Platform.environment['POSTGRES_PORT'] ?? '') ??
+        (throw Exception('POSTGRES_PORT is not provided')),
     database: Platform.environment['POSTGRES_DB'] ??
         (throw Exception('POSTGRES_DB is not provided')),
     username: Platform.environment['POSTGRES_USER'] ??
@@ -50,7 +52,7 @@ Future<void> init(InternetAddress ip, int port) async {
 
   Future.delayed(const Duration(seconds: 30), _setupTgstatCallback);
 
-  logger.e('Server initialized');
+  logger.i('Server initialized');
 }
 
 Future<HttpServer> run(Handler handler, InternetAddress ip, int port) async {
@@ -59,10 +61,10 @@ Future<HttpServer> run(Handler handler, InternetAddress ip, int port) async {
 
 Future<void> _setupTgstatCallback() async {
   final logger = GetIt.I.get<Logger>()
-    ..e('Setting up tgstat callback for $publicUrl');
+    ..i('Setting up tgstat callback for $publicUrl');
   final tgstatCallback =
       await GetIt.I.get<TgstatRepository>().setCallbackUrl(publicUrl);
-  logger.e('Tgstat callback: $tgstatCallback');
+  logger.i('Tgstat callback: $tgstatCallback');
 
   if (tgstatCallback == null) exit(1);
 

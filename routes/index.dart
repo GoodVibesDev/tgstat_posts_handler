@@ -22,7 +22,9 @@ Future<Response> onRequest(RequestContext context) async {
     handlersPool.handlePost(body);
   } catch (e) {
     logger.e('Failed to handle post', error: e);
-    return Response(statusCode: 500);
+    if (e is NoFreeHandlersException) {
+      return Response(statusCode: 429);
+    }
   }
 
   final code = GetIt.I.isRegistered<TgstatCallbackUrl>()

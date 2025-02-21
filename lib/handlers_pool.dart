@@ -16,7 +16,7 @@ class HandlersPool {
 
   void handlePost(String body) {
     if (!haveFreeHandler) {
-      throw Exception('No free handlers');
+      throw NoFreeHandlersException();
     }
 
     final handler = PostHandler(_logger, _database, _hiveCache);
@@ -27,4 +27,8 @@ class HandlersPool {
   }
 
   bool get haveFreeHandler => _handlers.length < _maxHandlersCount;
+}
+
+class NoFreeHandlersException implements Exception {
+  NoFreeHandlersException();
 }
