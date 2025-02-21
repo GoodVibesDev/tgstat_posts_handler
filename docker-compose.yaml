@@ -5,6 +5,6 @@ services:
       - '9393:8080'
     volumes:
       - posts_handler_data:/storage
-    env_file: "../handler.env"
+    env_file: "handler.env"
 volumes:
   posts_handler_data:
