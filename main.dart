@@ -65,7 +65,7 @@ Future<void> _setupTgstatCallback() async {
       await GetIt.I.get<TgstatRepository>().setCallbackUrl(publicUrl);
   logger.i('Tgstat callback: $tgstatCallback');
 
-  if (tgstatCallback == null) exit(1);
+  if (tgstatCallback == null) return;
 
   await GetIt.I.get<HiveCache>().putToCache('code', tgstatCallback.code);
 }
