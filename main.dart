@@ -14,7 +14,7 @@ import 'package:tgstat_posts_handler/tg_stat_repository.dart';
 String publicUrl = '';
 
 Future<void> init(InternetAddress ip, int port) async {
-  final logger = Logger()..e('Initializing server');
+  final logger = Logger(filter: ProductionFilter())..e('Initializing server');
 
   publicUrl = Platform.environment['PUBLIC_URL'] ??
       (throw Exception('PUBLIC_URL is not provided'));
@@ -48,17 +48,13 @@ Future<void> init(InternetAddress ip, int port) async {
       TgstatRepository(token: token, logger: logger),
     );
 
+  Future.delayed(const Duration(seconds: 30), _setupTgstatCallback);
+
   logger.e('Server initialized');
 }
 
 Future<HttpServer> run(Handler handler, InternetAddress ip, int port) async {
-  GetIt.I.get<Logger>().e('Starting server on $ip:$port');
-
-  final result = serve(handler, ip, port);
-
-  await _setupTgstatCallback();
-
-  return result;
+  return serve(handler, ip, port);
 }
 
 Future<void> _setupTgstatCallback() async {
