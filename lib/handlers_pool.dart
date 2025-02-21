@@ -14,14 +14,14 @@ class HandlersPool {
 
   final List<PostHandler> _handlers = [];
 
-  Future<void> handlePost(String body) async {
+  void handlePost(String body) {
     if (!haveFreeHandler) {
       throw NoFreeHandlersException();
     }
 
     final handler = PostHandler(_logger, _database, _hiveCache);
     _handlers.add(handler);
-    await handler.handleTgStatEvent(body).then((_) {
+    handler.handleTgStatEvent(body).whenComplete(() {
       _handlers.remove(handler);
     });
   }

@@ -20,7 +20,7 @@ Future<Response> onRequest(RequestContext context) async {
   final body = await utf8.decodeStream(context.request.bytes());
   logger.i('Received body: $body');
   try {
-    await handlersPool.handlePost(body);
+    handlersPool.handlePost(body);
   } catch (e) {
     logger.e('Failed to handle post', error: e);
     if (e is NoFreeHandlersException) {
