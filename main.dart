@@ -49,7 +49,9 @@ Future<void> init(InternetAddress ip, int port) async {
 }
 
 Future<HttpServer> run(Handler handler, InternetAddress ip, int port) async {
-  final result = await serve(handler, ip, port);
+  GetIt.I.get<Logger>().i('Starting server on $ip:$port');
+
+  final result = serve(handler, ip, port);
 
   await _setupTgstatCallback();
 
