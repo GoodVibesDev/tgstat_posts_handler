@@ -5,7 +5,7 @@ import 'package:dart_frog/dart_frog.dart';
 import 'package:get_it/get_it.dart';
 import 'package:logger/logger.dart';
 import 'package:tgstat_posts_handler/handlers_pool.dart';
-import 'package:tgstat_posts_handler/model/model.dart';
+import 'package:tgstat_posts_handler/hive_cache.dart';
 
 Future<Response> onRequest(RequestContext context) async {
   final logger = GetIt.I.get<Logger>()..i('Received new post from tgstat');
@@ -27,9 +27,7 @@ Future<Response> onRequest(RequestContext context) async {
     }
   }
 
-  final code = GetIt.I.isRegistered<TgstatCallbackUrl>()
-      ? GetIt.I.get<TgstatCallbackUrl>().code
-      : '';
+  final code = GetIt.I.get<HiveCache>().getFromCache('code') ?? '';
 
   logger.i('Returning code: $code');
 

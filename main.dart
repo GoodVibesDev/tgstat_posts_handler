@@ -8,7 +8,6 @@ import 'package:postgres/postgres.dart';
 import 'package:tgstat_posts_handler/database.dart';
 import 'package:tgstat_posts_handler/handlers_pool.dart';
 import 'package:tgstat_posts_handler/hive_cache.dart';
-import 'package:tgstat_posts_handler/model/model.dart';
 import 'package:tgstat_posts_handler/tg_stat_repository.dart';
 
 String publicUrl = '';
@@ -68,5 +67,5 @@ Future<void> _setupTgstatCallback() async {
 
   if (tgstatCallback == null) exit(1);
 
-  GetIt.I.registerSingleton<TgstatCallbackUrl>(tgstatCallback);
+  await GetIt.I.get<HiveCache>().putToCache('code', tgstatCallback.code);
 }
