@@ -6,6 +6,7 @@ import 'package:hive/hive.dart';
 import 'package:logger/logger.dart';
 import 'package:postgres/postgres.dart';
 import 'package:tgstat_posts_handler/database.dart';
+import 'package:tgstat_posts_handler/handlers_pool.dart';
 import 'package:tgstat_posts_handler/hive_cache.dart';
 import 'package:tgstat_posts_handler/model/model.dart';
 import 'package:tgstat_posts_handler/tg_stat_repository.dart';
@@ -35,11 +36,13 @@ Future<void> init(InternetAddress ip, int port) async {
   await hiveCache.init();
 
   final logger = Logger();
+  final database = Database(logger, endpoint);
 
   GetIt.I
     ..registerSingleton<Logger>(logger)
-    ..registerSingleton<Database>(Database(logger, endpoint))
+    ..registerSingleton<Database>(database)
     ..registerSingleton<HiveCache>(hiveCache)
+    ..registerSingleton(HandlersPool(logger, database, hiveCache))
     ..registerSingleton<TgstatRepository>(
       TgstatRepository(token: token, logger: logger),
     );
@@ -54,8 +57,11 @@ Future<HttpServer> run(Handler handler, InternetAddress ip, int port) async {
 }
 
 Future<void> _setupTgstatCallback() async {
+  final logger = GetIt.I.get<Logger>()
+    ..i('Setting up tgstat callback for $publicUrl');
   final tgstatCallback =
       await GetIt.I.get<TgstatRepository>().setCallbackUrl(publicUrl);
+  logger.i('Tgstat callback: $tgstatCallback');
 
   if (tgstatCallback == null) exit(1);
 
