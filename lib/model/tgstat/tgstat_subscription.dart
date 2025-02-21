@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import 'tgstat.dart';
+import 'package:tgstat_posts_handler/model/tgstat/tgstat.dart';
 
 part 'tgstat_subscription.freezed.dart';
+
 part 'tgstat_subscription.g.dart';
 
 @freezed
