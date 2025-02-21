@@ -14,6 +14,8 @@ import 'package:tgstat_posts_handler/tg_stat_repository.dart';
 String publicUrl = '';
 
 Future<void> init(InternetAddress ip, int port) async {
+  final logger = Logger()..i('Initializing server');
+
   publicUrl = Platform.environment['PUBLIC_URL'] ??
       (throw Exception('PUBLIC_URL is not provided'));
 
@@ -35,7 +37,6 @@ Future<void> init(InternetAddress ip, int port) async {
   final hiveCache = HiveCache();
   await hiveCache.init();
 
-  final logger = Logger();
   final database = Database(logger, endpoint);
 
   GetIt.I
@@ -46,6 +47,8 @@ Future<void> init(InternetAddress ip, int port) async {
     ..registerSingleton<TgstatRepository>(
       TgstatRepository(token: token, logger: logger),
     );
+
+  logger.i('Server initialized');
 }
 
 Future<HttpServer> run(Handler handler, InternetAddress ip, int port) async {
