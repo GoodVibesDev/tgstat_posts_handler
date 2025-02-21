@@ -19,7 +19,7 @@ Future<Response> onRequest(RequestContext context) async {
 
   final body = await utf8.decodeStream(context.request.bytes());
   try {
-    handlersPool.handlePost(body);
+    await handlersPool.handlePost(body);
   } catch (e) {
     logger.e('Failed to handle post', error: e);
     if (e is NoFreeHandlersException) {
@@ -30,6 +30,8 @@ Future<Response> onRequest(RequestContext context) async {
   final code = GetIt.I.isRegistered<TgstatCallbackUrl>()
       ? GetIt.I.get<TgstatCallbackUrl>().code
       : '';
+
+  logger.i('Returning code: $code');
 
   return Response(body: code);
 }
