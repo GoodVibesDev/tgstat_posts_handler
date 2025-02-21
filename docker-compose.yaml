@@ -1,0 +1,10 @@
+services:
+  posts_handler:
+    build: ./build
+    ports:
+      - '9393:8080'
+    volumes:
+      - posts_handler_data:/storage
+    env_file: "../handler.env"
+volumes:
+  posts_handler_data:
