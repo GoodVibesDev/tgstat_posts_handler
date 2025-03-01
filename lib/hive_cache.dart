@@ -11,7 +11,7 @@ class HiveCache {
     await _storage.put(key, value);
 
     // подчищаем кэш, чтобы он сильно не разрастался
-    if (_storage.length > 10000) {
+    if (_storage.length > 30000) {
       await _storage.deleteAll(_storage.keys.take(1000));
     }
   }
