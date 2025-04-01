@@ -5,7 +5,7 @@ part 'tgstat_post.freezed.dart';
 part 'tgstat_post.g.dart';
 
 @freezed
-class TgstatPost with _$TgstatPost {
+sealed class TgstatPost with _$TgstatPost {
   const factory TgstatPost({
     @EpochDateTimeConverter() required DateTime date,
     required String link,

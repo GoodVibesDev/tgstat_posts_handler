@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,152 +10,31 @@ part of 'tgstat_response_template.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-TgstatResponseTemplate _$TgstatResponseTemplateFromJson(
-    Map<String, dynamic> json) {
-  return _TgstatResponseTemplate.fromJson(json);
-}
 
 /// @nodoc
 mixin _$TgstatResponseTemplate {
-  String get status => throw _privateConstructorUsedError;
-  dynamic get response => throw _privateConstructorUsedError;
-  String? get error => throw _privateConstructorUsedError;
-
-  /// Serializes this TgstatResponseTemplate to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get status;
+  dynamic get response;
+  String? get error;
 
   /// Create a copy of TgstatResponseTemplate
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $TgstatResponseTemplateCopyWith<TgstatResponseTemplate> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$TgstatResponseTemplateCopyWithImpl<TgstatResponseTemplate>(
+          this as TgstatResponseTemplate, _$identity);
 
-/// @nodoc
-abstract class $TgstatResponseTemplateCopyWith<$Res> {
-  factory $TgstatResponseTemplateCopyWith(TgstatResponseTemplate value,
-          $Res Function(TgstatResponseTemplate) then) =
-      _$TgstatResponseTemplateCopyWithImpl<$Res, TgstatResponseTemplate>;
-  @useResult
-  $Res call({String status, dynamic response, String? error});
-}
-
-/// @nodoc
-class _$TgstatResponseTemplateCopyWithImpl<$Res,
-        $Val extends TgstatResponseTemplate>
-    implements $TgstatResponseTemplateCopyWith<$Res> {
-  _$TgstatResponseTemplateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of TgstatResponseTemplate
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? status = null,
-    Object? response = freezed,
-    Object? error = freezed,
-  }) {
-    return _then(_value.copyWith(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      response: freezed == response
-          ? _value.response
-          : response // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      error: freezed == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$TgstatResponseTemplateImplCopyWith<$Res>
-    implements $TgstatResponseTemplateCopyWith<$Res> {
-  factory _$$TgstatResponseTemplateImplCopyWith(
-          _$TgstatResponseTemplateImpl value,
-          $Res Function(_$TgstatResponseTemplateImpl) then) =
-      __$$TgstatResponseTemplateImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String status, dynamic response, String? error});
-}
-
-/// @nodoc
-class __$$TgstatResponseTemplateImplCopyWithImpl<$Res>
-    extends _$TgstatResponseTemplateCopyWithImpl<$Res,
-        _$TgstatResponseTemplateImpl>
-    implements _$$TgstatResponseTemplateImplCopyWith<$Res> {
-  __$$TgstatResponseTemplateImplCopyWithImpl(
-      _$TgstatResponseTemplateImpl _value,
-      $Res Function(_$TgstatResponseTemplateImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of TgstatResponseTemplate
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? status = null,
-    Object? response = freezed,
-    Object? error = freezed,
-  }) {
-    return _then(_$TgstatResponseTemplateImpl(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      response: freezed == response
-          ? _value.response
-          : response // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      error: freezed == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$TgstatResponseTemplateImpl implements _TgstatResponseTemplate {
-  const _$TgstatResponseTemplateImpl(
-      {required this.status, required this.response, required this.error});
-
-  factory _$TgstatResponseTemplateImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TgstatResponseTemplateImplFromJson(json);
-
-  @override
-  final String status;
-  @override
-  final dynamic response;
-  @override
-  final String? error;
-
-  @override
-  String toString() {
-    return 'TgstatResponseTemplate(status: $status, response: $response, error: $error)';
-  }
+  /// Serializes this TgstatResponseTemplate to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TgstatResponseTemplateImpl &&
+            other is TgstatResponseTemplate &&
             (identical(other.status, status) || other.status == status) &&
             const DeepCollectionEquality().equals(other.response, response) &&
             (identical(other.error, error) || other.error == error));
@@ -165,43 +45,150 @@ class _$TgstatResponseTemplateImpl implements _TgstatResponseTemplate {
   int get hashCode => Object.hash(runtimeType, status,
       const DeepCollectionEquality().hash(response), error);
 
-  /// Create a copy of TgstatResponseTemplate
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$TgstatResponseTemplateImplCopyWith<_$TgstatResponseTemplateImpl>
-      get copyWith => __$$TgstatResponseTemplateImplCopyWithImpl<
-          _$TgstatResponseTemplateImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TgstatResponseTemplateImplToJson(
-      this,
-    );
+  String toString() {
+    return 'TgstatResponseTemplate(status: $status, response: $response, error: $error)';
   }
 }
 
-abstract class _TgstatResponseTemplate implements TgstatResponseTemplate {
-  const factory _TgstatResponseTemplate(
-      {required final String status,
-      required final dynamic response,
-      required final String? error}) = _$TgstatResponseTemplateImpl;
+/// @nodoc
+abstract mixin class $TgstatResponseTemplateCopyWith<$Res> {
+  factory $TgstatResponseTemplateCopyWith(TgstatResponseTemplate value,
+          $Res Function(TgstatResponseTemplate) _then) =
+      _$TgstatResponseTemplateCopyWithImpl;
+  @useResult
+  $Res call({String status, dynamic response, String? error});
+}
 
-  factory _TgstatResponseTemplate.fromJson(Map<String, dynamic> json) =
-      _$TgstatResponseTemplateImpl.fromJson;
+/// @nodoc
+class _$TgstatResponseTemplateCopyWithImpl<$Res>
+    implements $TgstatResponseTemplateCopyWith<$Res> {
+  _$TgstatResponseTemplateCopyWithImpl(this._self, this._then);
+
+  final TgstatResponseTemplate _self;
+  final $Res Function(TgstatResponseTemplate) _then;
+
+  /// Create a copy of TgstatResponseTemplate
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = null,
+    Object? response = freezed,
+    Object? error = freezed,
+  }) {
+    return _then(_self.copyWith(
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      response: freezed == response
+          ? _self.response
+          : response // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      error: freezed == error
+          ? _self.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _TgstatResponseTemplate implements TgstatResponseTemplate {
+  const _TgstatResponseTemplate(
+      {required this.status, required this.response, required this.error});
+  factory _TgstatResponseTemplate.fromJson(Map<String, dynamic> json) =>
+      _$TgstatResponseTemplateFromJson(json);
 
   @override
-  String get status;
+  final String status;
   @override
-  dynamic get response;
+  final dynamic response;
   @override
-  String? get error;
+  final String? error;
 
   /// Create a copy of TgstatResponseTemplate
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TgstatResponseTemplateImplCopyWith<_$TgstatResponseTemplateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$TgstatResponseTemplateCopyWith<_TgstatResponseTemplate> get copyWith =>
+      __$TgstatResponseTemplateCopyWithImpl<_TgstatResponseTemplate>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TgstatResponseTemplateToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _TgstatResponseTemplate &&
+            (identical(other.status, status) || other.status == status) &&
+            const DeepCollectionEquality().equals(other.response, response) &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, status,
+      const DeepCollectionEquality().hash(response), error);
+
+  @override
+  String toString() {
+    return 'TgstatResponseTemplate(status: $status, response: $response, error: $error)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$TgstatResponseTemplateCopyWith<$Res>
+    implements $TgstatResponseTemplateCopyWith<$Res> {
+  factory _$TgstatResponseTemplateCopyWith(_TgstatResponseTemplate value,
+          $Res Function(_TgstatResponseTemplate) _then) =
+      __$TgstatResponseTemplateCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String status, dynamic response, String? error});
+}
+
+/// @nodoc
+class __$TgstatResponseTemplateCopyWithImpl<$Res>
+    implements _$TgstatResponseTemplateCopyWith<$Res> {
+  __$TgstatResponseTemplateCopyWithImpl(this._self, this._then);
+
+  final _TgstatResponseTemplate _self;
+  final $Res Function(_TgstatResponseTemplate) _then;
+
+  /// Create a copy of TgstatResponseTemplate
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? status = null,
+    Object? response = freezed,
+    Object? error = freezed,
+  }) {
+    return _then(_TgstatResponseTemplate(
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      response: freezed == response
+          ? _self.response
+          : response // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      error: freezed == error
+          ? _self.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

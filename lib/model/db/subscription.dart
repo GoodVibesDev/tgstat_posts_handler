@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'subscription.freezed.dart';
 
 @freezed
-class Subscription with _$Subscription {
+sealed class Subscription with _$Subscription {
   factory Subscription({
     required String keyword,
     required bool active,

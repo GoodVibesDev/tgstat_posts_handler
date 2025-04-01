@@ -6,14 +6,14 @@ part of 'tgstat_subscription_keyword.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TgstatSubscriptionKeywordImpl _$$TgstatSubscriptionKeywordImplFromJson(
+_TgstatSubscriptionKeyword _$TgstatSubscriptionKeywordFromJson(
         Map<String, dynamic> json) =>
-    _$TgstatSubscriptionKeywordImpl(
+    _TgstatSubscriptionKeyword(
       query: json['q'] as String,
     );
 
-Map<String, dynamic> _$$TgstatSubscriptionKeywordImplToJson(
-        _$TgstatSubscriptionKeywordImpl instance) =>
+Map<String, dynamic> _$TgstatSubscriptionKeywordToJson(
+        _TgstatSubscriptionKeyword instance) =>
     <String, dynamic>{
       'q': instance.query,
     };

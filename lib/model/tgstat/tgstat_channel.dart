@@ -5,7 +5,7 @@ part 'tgstat_channel.freezed.dart';
 part 'tgstat_channel.g.dart';
 
 @freezed
-class TgstatChannel with _$TgstatChannel {
+sealed class TgstatChannel with _$TgstatChannel {
   const factory TgstatChannel({
     @JsonKey(name: 'tg_id') required int tgId,
     required String link,

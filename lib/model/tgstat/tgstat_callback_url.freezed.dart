@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,83 +10,59 @@ part of 'tgstat_callback_url.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-TgstatCallbackUrl _$TgstatCallbackUrlFromJson(Map<String, dynamic> json) {
-  return _TgstatCallbackUrl.fromJson(json);
-}
 
 /// @nodoc
 mixin _$TgstatCallbackUrl {
   @JsonKey(name: 'verify_code')
-  String get code => throw _privateConstructorUsedError;
-
-  /// Serializes this TgstatCallbackUrl to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get code;
 
   /// Create a copy of TgstatCallbackUrl
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $TgstatCallbackUrlCopyWith<TgstatCallbackUrl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TgstatCallbackUrlCopyWith<$Res> {
-  factory $TgstatCallbackUrlCopyWith(
-          TgstatCallbackUrl value, $Res Function(TgstatCallbackUrl) then) =
-      _$TgstatCallbackUrlCopyWithImpl<$Res, TgstatCallbackUrl>;
-  @useResult
-  $Res call({@JsonKey(name: 'verify_code') String code});
-}
-
-/// @nodoc
-class _$TgstatCallbackUrlCopyWithImpl<$Res, $Val extends TgstatCallbackUrl>
-    implements $TgstatCallbackUrlCopyWith<$Res> {
-  _$TgstatCallbackUrlCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of TgstatCallbackUrl
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $TgstatCallbackUrlCopyWith<TgstatCallbackUrl> get copyWith =>
+      _$TgstatCallbackUrlCopyWithImpl<TgstatCallbackUrl>(
+          this as TgstatCallbackUrl, _$identity);
+
+  /// Serializes this TgstatCallbackUrl to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? code = null,
-  }) {
-    return _then(_value.copyWith(
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is TgstatCallbackUrl &&
+            (identical(other.code, code) || other.code == code));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, code);
+
+  @override
+  String toString() {
+    return 'TgstatCallbackUrl(code: $code)';
   }
 }
 
 /// @nodoc
-abstract class _$$TgstatCallbackUrlImplCopyWith<$Res>
-    implements $TgstatCallbackUrlCopyWith<$Res> {
-  factory _$$TgstatCallbackUrlImplCopyWith(_$TgstatCallbackUrlImpl value,
-          $Res Function(_$TgstatCallbackUrlImpl) then) =
-      __$$TgstatCallbackUrlImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $TgstatCallbackUrlCopyWith<$Res> {
+  factory $TgstatCallbackUrlCopyWith(
+          TgstatCallbackUrl value, $Res Function(TgstatCallbackUrl) _then) =
+      _$TgstatCallbackUrlCopyWithImpl;
   @useResult
   $Res call({@JsonKey(name: 'verify_code') String code});
 }
 
 /// @nodoc
-class __$$TgstatCallbackUrlImplCopyWithImpl<$Res>
-    extends _$TgstatCallbackUrlCopyWithImpl<$Res, _$TgstatCallbackUrlImpl>
-    implements _$$TgstatCallbackUrlImplCopyWith<$Res> {
-  __$$TgstatCallbackUrlImplCopyWithImpl(_$TgstatCallbackUrlImpl _value,
-      $Res Function(_$TgstatCallbackUrlImpl) _then)
-      : super(_value, _then);
+class _$TgstatCallbackUrlCopyWithImpl<$Res>
+    implements $TgstatCallbackUrlCopyWith<$Res> {
+  _$TgstatCallbackUrlCopyWithImpl(this._self, this._then);
+
+  final TgstatCallbackUrl _self;
+  final $Res Function(TgstatCallbackUrl) _then;
 
   /// Create a copy of TgstatCallbackUrl
   /// with the given fields replaced by the non-null parameter values.
@@ -94,9 +71,9 @@ class __$$TgstatCallbackUrlImplCopyWithImpl<$Res>
   $Res call({
     Object? code = null,
   }) {
-    return _then(_$TgstatCallbackUrlImpl(
+    return _then(_self.copyWith(
       code: null == code
-          ? _value.code
+          ? _self.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -105,27 +82,35 @@ class __$$TgstatCallbackUrlImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TgstatCallbackUrlImpl implements _TgstatCallbackUrl {
-  const _$TgstatCallbackUrlImpl(
-      {@JsonKey(name: 'verify_code') required this.code});
-
-  factory _$TgstatCallbackUrlImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TgstatCallbackUrlImplFromJson(json);
+class _TgstatCallbackUrl implements TgstatCallbackUrl {
+  const _TgstatCallbackUrl({@JsonKey(name: 'verify_code') required this.code});
+  factory _TgstatCallbackUrl.fromJson(Map<String, dynamic> json) =>
+      _$TgstatCallbackUrlFromJson(json);
 
   @override
   @JsonKey(name: 'verify_code')
   final String code;
 
+  /// Create a copy of TgstatCallbackUrl
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'TgstatCallbackUrl(code: $code)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TgstatCallbackUrlCopyWith<_TgstatCallbackUrl> get copyWith =>
+      __$TgstatCallbackUrlCopyWithImpl<_TgstatCallbackUrl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TgstatCallbackUrlToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TgstatCallbackUrlImpl &&
+            other is _TgstatCallbackUrl &&
             (identical(other.code, code) || other.code == code));
   }
 
@@ -133,39 +118,45 @@ class _$TgstatCallbackUrlImpl implements _TgstatCallbackUrl {
   @override
   int get hashCode => Object.hash(runtimeType, code);
 
-  /// Create a copy of TgstatCallbackUrl
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$TgstatCallbackUrlImplCopyWith<_$TgstatCallbackUrlImpl> get copyWith =>
-      __$$TgstatCallbackUrlImplCopyWithImpl<_$TgstatCallbackUrlImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TgstatCallbackUrlImplToJson(
-      this,
-    );
+  String toString() {
+    return 'TgstatCallbackUrl(code: $code)';
   }
 }
 
-abstract class _TgstatCallbackUrl implements TgstatCallbackUrl {
-  const factory _TgstatCallbackUrl(
-          {@JsonKey(name: 'verify_code') required final String code}) =
-      _$TgstatCallbackUrlImpl;
-
-  factory _TgstatCallbackUrl.fromJson(Map<String, dynamic> json) =
-      _$TgstatCallbackUrlImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$TgstatCallbackUrlCopyWith<$Res>
+    implements $TgstatCallbackUrlCopyWith<$Res> {
+  factory _$TgstatCallbackUrlCopyWith(
+          _TgstatCallbackUrl value, $Res Function(_TgstatCallbackUrl) _then) =
+      __$TgstatCallbackUrlCopyWithImpl;
   @override
-  @JsonKey(name: 'verify_code')
-  String get code;
+  @useResult
+  $Res call({@JsonKey(name: 'verify_code') String code});
+}
+
+/// @nodoc
+class __$TgstatCallbackUrlCopyWithImpl<$Res>
+    implements _$TgstatCallbackUrlCopyWith<$Res> {
+  __$TgstatCallbackUrlCopyWithImpl(this._self, this._then);
+
+  final _TgstatCallbackUrl _self;
+  final $Res Function(_TgstatCallbackUrl) _then;
 
   /// Create a copy of TgstatCallbackUrl
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TgstatCallbackUrlImplCopyWith<_$TgstatCallbackUrlImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? code = null,
+  }) {
+    return _then(_TgstatCallbackUrl(
+      code: null == code
+          ? _self.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
+
+// dart format on

@@ -4,7 +4,7 @@ part 'tgstat_callback_url.freezed.dart';
 part 'tgstat_callback_url.g.dart';
 
 @freezed
-class TgstatCallbackUrl with _$TgstatCallbackUrl {
+sealed class TgstatCallbackUrl with _$TgstatCallbackUrl {
   const factory TgstatCallbackUrl({
     @JsonKey(name: 'verify_code') required String code,
   }) = _TgstatCallbackUrl;

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,102 +10,58 @@ part of 'tgstat_post.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-TgstatPost _$TgstatPostFromJson(Map<String, dynamic> json) {
-  return _TgstatPost.fromJson(json);
-}
 
 /// @nodoc
 mixin _$TgstatPost {
   @EpochDateTimeConverter()
-  DateTime get date => throw _privateConstructorUsedError;
-  String get link => throw _privateConstructorUsedError;
-  int get id => throw _privateConstructorUsedError;
-  String get text => throw _privateConstructorUsedError;
+  DateTime get date;
+  String get link;
+  int get id;
+  String get text;
   @JsonKey(name: 'forwarded_from')
-  int? get forwardedFrom => throw _privateConstructorUsedError;
-
-  /// Serializes this TgstatPost to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int? get forwardedFrom;
 
   /// Create a copy of TgstatPost
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $TgstatPostCopyWith<TgstatPost> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TgstatPostCopyWith<$Res> {
-  factory $TgstatPostCopyWith(
-          TgstatPost value, $Res Function(TgstatPost) then) =
-      _$TgstatPostCopyWithImpl<$Res, TgstatPost>;
-  @useResult
-  $Res call(
-      {@EpochDateTimeConverter() DateTime date,
-      String link,
-      int id,
-      String text,
-      @JsonKey(name: 'forwarded_from') int? forwardedFrom});
-}
-
-/// @nodoc
-class _$TgstatPostCopyWithImpl<$Res, $Val extends TgstatPost>
-    implements $TgstatPostCopyWith<$Res> {
-  _$TgstatPostCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of TgstatPost
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $TgstatPostCopyWith<TgstatPost> get copyWith =>
+      _$TgstatPostCopyWithImpl<TgstatPost>(this as TgstatPost, _$identity);
+
+  /// Serializes this TgstatPost to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? date = null,
-    Object? link = null,
-    Object? id = null,
-    Object? text = null,
-    Object? forwardedFrom = freezed,
-  }) {
-    return _then(_value.copyWith(
-      date: null == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      link: null == link
-          ? _value.link
-          : link // ignore: cast_nullable_to_non_nullable
-              as String,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      text: null == text
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String,
-      forwardedFrom: freezed == forwardedFrom
-          ? _value.forwardedFrom
-          : forwardedFrom // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is TgstatPost &&
+            (identical(other.date, date) || other.date == date) &&
+            (identical(other.link, link) || other.link == link) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.forwardedFrom, forwardedFrom) ||
+                other.forwardedFrom == forwardedFrom));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, date, link, id, text, forwardedFrom);
+
+  @override
+  String toString() {
+    return 'TgstatPost(date: $date, link: $link, id: $id, text: $text, forwardedFrom: $forwardedFrom)';
   }
 }
 
 /// @nodoc
-abstract class _$$TgstatPostImplCopyWith<$Res>
-    implements $TgstatPostCopyWith<$Res> {
-  factory _$$TgstatPostImplCopyWith(
-          _$TgstatPostImpl value, $Res Function(_$TgstatPostImpl) then) =
-      __$$TgstatPostImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $TgstatPostCopyWith<$Res> {
+  factory $TgstatPostCopyWith(
+          TgstatPost value, $Res Function(TgstatPost) _then) =
+      _$TgstatPostCopyWithImpl;
   @useResult
   $Res call(
       {@EpochDateTimeConverter() DateTime date,
@@ -115,12 +72,11 @@ abstract class _$$TgstatPostImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$TgstatPostImplCopyWithImpl<$Res>
-    extends _$TgstatPostCopyWithImpl<$Res, _$TgstatPostImpl>
-    implements _$$TgstatPostImplCopyWith<$Res> {
-  __$$TgstatPostImplCopyWithImpl(
-      _$TgstatPostImpl _value, $Res Function(_$TgstatPostImpl) _then)
-      : super(_value, _then);
+class _$TgstatPostCopyWithImpl<$Res> implements $TgstatPostCopyWith<$Res> {
+  _$TgstatPostCopyWithImpl(this._self, this._then);
+
+  final TgstatPost _self;
+  final $Res Function(TgstatPost) _then;
 
   /// Create a copy of TgstatPost
   /// with the given fields replaced by the non-null parameter values.
@@ -133,25 +89,25 @@ class __$$TgstatPostImplCopyWithImpl<$Res>
     Object? text = null,
     Object? forwardedFrom = freezed,
   }) {
-    return _then(_$TgstatPostImpl(
+    return _then(_self.copyWith(
       date: null == date
-          ? _value.date
+          ? _self.date
           : date // ignore: cast_nullable_to_non_nullable
               as DateTime,
       link: null == link
-          ? _value.link
+          ? _self.link
           : link // ignore: cast_nullable_to_non_nullable
               as String,
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
       text: null == text
-          ? _value.text
+          ? _self.text
           : text // ignore: cast_nullable_to_non_nullable
               as String,
       forwardedFrom: freezed == forwardedFrom
-          ? _value.forwardedFrom
+          ? _self.forwardedFrom
           : forwardedFrom // ignore: cast_nullable_to_non_nullable
               as int?,
     ));
@@ -160,16 +116,15 @@ class __$$TgstatPostImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TgstatPostImpl implements _TgstatPost {
-  const _$TgstatPostImpl(
+class _TgstatPost implements TgstatPost {
+  const _TgstatPost(
       {@EpochDateTimeConverter() required this.date,
       required this.link,
       required this.id,
       required this.text,
       @JsonKey(name: 'forwarded_from') this.forwardedFrom});
-
-  factory _$TgstatPostImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TgstatPostImplFromJson(json);
+  factory _TgstatPost.fromJson(Map<String, dynamic> json) =>
+      _$TgstatPostFromJson(json);
 
   @override
   @EpochDateTimeConverter()
@@ -184,16 +139,26 @@ class _$TgstatPostImpl implements _TgstatPost {
   @JsonKey(name: 'forwarded_from')
   final int? forwardedFrom;
 
+  /// Create a copy of TgstatPost
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'TgstatPost(date: $date, link: $link, id: $id, text: $text, forwardedFrom: $forwardedFrom)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TgstatPostCopyWith<_TgstatPost> get copyWith =>
+      __$TgstatPostCopyWithImpl<_TgstatPost>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TgstatPostToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TgstatPostImpl &&
+            other is _TgstatPost &&
             (identical(other.date, date) || other.date == date) &&
             (identical(other.link, link) || other.link == link) &&
             (identical(other.id, id) || other.id == id) &&
@@ -207,51 +172,69 @@ class _$TgstatPostImpl implements _TgstatPost {
   int get hashCode =>
       Object.hash(runtimeType, date, link, id, text, forwardedFrom);
 
-  /// Create a copy of TgstatPost
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$TgstatPostImplCopyWith<_$TgstatPostImpl> get copyWith =>
-      __$$TgstatPostImplCopyWithImpl<_$TgstatPostImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TgstatPostImplToJson(
-      this,
-    );
+  String toString() {
+    return 'TgstatPost(date: $date, link: $link, id: $id, text: $text, forwardedFrom: $forwardedFrom)';
   }
 }
 
-abstract class _TgstatPost implements TgstatPost {
-  const factory _TgstatPost(
-          {@EpochDateTimeConverter() required final DateTime date,
-          required final String link,
-          required final int id,
-          required final String text,
-          @JsonKey(name: 'forwarded_from') final int? forwardedFrom}) =
-      _$TgstatPostImpl;
+/// @nodoc
+abstract mixin class _$TgstatPostCopyWith<$Res>
+    implements $TgstatPostCopyWith<$Res> {
+  factory _$TgstatPostCopyWith(
+          _TgstatPost value, $Res Function(_TgstatPost) _then) =
+      __$TgstatPostCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@EpochDateTimeConverter() DateTime date,
+      String link,
+      int id,
+      String text,
+      @JsonKey(name: 'forwarded_from') int? forwardedFrom});
+}
 
-  factory _TgstatPost.fromJson(Map<String, dynamic> json) =
-      _$TgstatPostImpl.fromJson;
+/// @nodoc
+class __$TgstatPostCopyWithImpl<$Res> implements _$TgstatPostCopyWith<$Res> {
+  __$TgstatPostCopyWithImpl(this._self, this._then);
 
-  @override
-  @EpochDateTimeConverter()
-  DateTime get date;
-  @override
-  String get link;
-  @override
-  int get id;
-  @override
-  String get text;
-  @override
-  @JsonKey(name: 'forwarded_from')
-  int? get forwardedFrom;
+  final _TgstatPost _self;
+  final $Res Function(_TgstatPost) _then;
 
   /// Create a copy of TgstatPost
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TgstatPostImplCopyWith<_$TgstatPostImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? date = null,
+    Object? link = null,
+    Object? id = null,
+    Object? text = null,
+    Object? forwardedFrom = freezed,
+  }) {
+    return _then(_TgstatPost(
+      date: null == date
+          ? _self.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      link: null == link
+          ? _self.link
+          : link // ignore: cast_nullable_to_non_nullable
+              as String,
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      text: null == text
+          ? _self.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String,
+      forwardedFrom: freezed == forwardedFrom
+          ? _self.forwardedFrom
+          : forwardedFrom // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
 }
+
+// dart format on

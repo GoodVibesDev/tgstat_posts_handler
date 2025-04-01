@@ -4,7 +4,7 @@ part 'tgstat_subscription_keyword.freezed.dart';
 part 'tgstat_subscription_keyword.g.dart';
 
 @freezed
-class TgstatSubscriptionKeyword with _$TgstatSubscriptionKeyword {
+sealed class TgstatSubscriptionKeyword with _$TgstatSubscriptionKeyword {
   const factory TgstatSubscriptionKeyword({
     @JsonKey(name: 'q') required String query,
   }) = _TgstatSubscriptionKeyword;

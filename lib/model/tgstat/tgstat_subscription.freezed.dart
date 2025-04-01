@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,158 +10,32 @@ part of 'tgstat_subscription.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-TgstatSubscription _$TgstatSubscriptionFromJson(Map<String, dynamic> json) {
-  return _TgstatSubscription.fromJson(json);
-}
 
 /// @nodoc
 mixin _$TgstatSubscription {
   @JsonKey(name: 'subscription_id')
-  int get id => throw _privateConstructorUsedError;
+  int get id;
   @JsonKey(name: 'keyword')
-  TgstatSubscriptionKeyword get keyword => throw _privateConstructorUsedError;
-
-  /// Serializes this TgstatSubscription to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  TgstatSubscriptionKeyword get keyword;
 
   /// Create a copy of TgstatSubscription
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $TgstatSubscriptionCopyWith<TgstatSubscription> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$TgstatSubscriptionCopyWithImpl<TgstatSubscription>(
+          this as TgstatSubscription, _$identity);
 
-/// @nodoc
-abstract class $TgstatSubscriptionCopyWith<$Res> {
-  factory $TgstatSubscriptionCopyWith(
-          TgstatSubscription value, $Res Function(TgstatSubscription) then) =
-      _$TgstatSubscriptionCopyWithImpl<$Res, TgstatSubscription>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'subscription_id') int id,
-      @JsonKey(name: 'keyword') TgstatSubscriptionKeyword keyword});
-
-  $TgstatSubscriptionKeywordCopyWith<$Res> get keyword;
-}
-
-/// @nodoc
-class _$TgstatSubscriptionCopyWithImpl<$Res, $Val extends TgstatSubscription>
-    implements $TgstatSubscriptionCopyWith<$Res> {
-  _$TgstatSubscriptionCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of TgstatSubscription
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? keyword = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      keyword: null == keyword
-          ? _value.keyword
-          : keyword // ignore: cast_nullable_to_non_nullable
-              as TgstatSubscriptionKeyword,
-    ) as $Val);
-  }
-
-  /// Create a copy of TgstatSubscription
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $TgstatSubscriptionKeywordCopyWith<$Res> get keyword {
-    return $TgstatSubscriptionKeywordCopyWith<$Res>(_value.keyword, (value) {
-      return _then(_value.copyWith(keyword: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$TgstatSubscriptionImplCopyWith<$Res>
-    implements $TgstatSubscriptionCopyWith<$Res> {
-  factory _$$TgstatSubscriptionImplCopyWith(_$TgstatSubscriptionImpl value,
-          $Res Function(_$TgstatSubscriptionImpl) then) =
-      __$$TgstatSubscriptionImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'subscription_id') int id,
-      @JsonKey(name: 'keyword') TgstatSubscriptionKeyword keyword});
-
-  @override
-  $TgstatSubscriptionKeywordCopyWith<$Res> get keyword;
-}
-
-/// @nodoc
-class __$$TgstatSubscriptionImplCopyWithImpl<$Res>
-    extends _$TgstatSubscriptionCopyWithImpl<$Res, _$TgstatSubscriptionImpl>
-    implements _$$TgstatSubscriptionImplCopyWith<$Res> {
-  __$$TgstatSubscriptionImplCopyWithImpl(_$TgstatSubscriptionImpl _value,
-      $Res Function(_$TgstatSubscriptionImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of TgstatSubscription
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? keyword = null,
-  }) {
-    return _then(_$TgstatSubscriptionImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      keyword: null == keyword
-          ? _value.keyword
-          : keyword // ignore: cast_nullable_to_non_nullable
-              as TgstatSubscriptionKeyword,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$TgstatSubscriptionImpl implements _TgstatSubscription {
-  const _$TgstatSubscriptionImpl(
-      {@JsonKey(name: 'subscription_id') required this.id,
-      @JsonKey(name: 'keyword') required this.keyword});
-
-  factory _$TgstatSubscriptionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TgstatSubscriptionImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'subscription_id')
-  final int id;
-  @override
-  @JsonKey(name: 'keyword')
-  final TgstatSubscriptionKeyword keyword;
-
-  @override
-  String toString() {
-    return 'TgstatSubscription(id: $id, keyword: $keyword)';
-  }
+  /// Serializes this TgstatSubscription to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TgstatSubscriptionImpl &&
+            other is TgstatSubscription &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.keyword, keyword) || other.keyword == keyword));
   }
@@ -169,44 +44,167 @@ class _$TgstatSubscriptionImpl implements _TgstatSubscription {
   @override
   int get hashCode => Object.hash(runtimeType, id, keyword);
 
-  /// Create a copy of TgstatSubscription
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$TgstatSubscriptionImplCopyWith<_$TgstatSubscriptionImpl> get copyWith =>
-      __$$TgstatSubscriptionImplCopyWithImpl<_$TgstatSubscriptionImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TgstatSubscriptionImplToJson(
-      this,
-    );
+  String toString() {
+    return 'TgstatSubscription(id: $id, keyword: $keyword)';
   }
 }
 
-abstract class _TgstatSubscription implements TgstatSubscription {
-  const factory _TgstatSubscription(
-          {@JsonKey(name: 'subscription_id') required final int id,
-          @JsonKey(name: 'keyword')
-          required final TgstatSubscriptionKeyword keyword}) =
-      _$TgstatSubscriptionImpl;
+/// @nodoc
+abstract mixin class $TgstatSubscriptionCopyWith<$Res> {
+  factory $TgstatSubscriptionCopyWith(
+          TgstatSubscription value, $Res Function(TgstatSubscription) _then) =
+      _$TgstatSubscriptionCopyWithImpl;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'subscription_id') int id,
+      @JsonKey(name: 'keyword') TgstatSubscriptionKeyword keyword});
 
-  factory _TgstatSubscription.fromJson(Map<String, dynamic> json) =
-      _$TgstatSubscriptionImpl.fromJson;
+  $TgstatSubscriptionKeywordCopyWith<$Res> get keyword;
+}
+
+/// @nodoc
+class _$TgstatSubscriptionCopyWithImpl<$Res>
+    implements $TgstatSubscriptionCopyWith<$Res> {
+  _$TgstatSubscriptionCopyWithImpl(this._self, this._then);
+
+  final TgstatSubscription _self;
+  final $Res Function(TgstatSubscription) _then;
+
+  /// Create a copy of TgstatSubscription
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? keyword = null,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      keyword: null == keyword
+          ? _self.keyword
+          : keyword // ignore: cast_nullable_to_non_nullable
+              as TgstatSubscriptionKeyword,
+    ));
+  }
+
+  /// Create a copy of TgstatSubscription
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TgstatSubscriptionKeywordCopyWith<$Res> get keyword {
+    return $TgstatSubscriptionKeywordCopyWith<$Res>(_self.keyword, (value) {
+      return _then(_self.copyWith(keyword: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _TgstatSubscription implements TgstatSubscription {
+  const _TgstatSubscription(
+      {@JsonKey(name: 'subscription_id') required this.id,
+      @JsonKey(name: 'keyword') required this.keyword});
+  factory _TgstatSubscription.fromJson(Map<String, dynamic> json) =>
+      _$TgstatSubscriptionFromJson(json);
 
   @override
   @JsonKey(name: 'subscription_id')
-  int get id;
+  final int id;
   @override
   @JsonKey(name: 'keyword')
-  TgstatSubscriptionKeyword get keyword;
+  final TgstatSubscriptionKeyword keyword;
 
   /// Create a copy of TgstatSubscription
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TgstatSubscriptionImplCopyWith<_$TgstatSubscriptionImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$TgstatSubscriptionCopyWith<_TgstatSubscription> get copyWith =>
+      __$TgstatSubscriptionCopyWithImpl<_TgstatSubscription>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TgstatSubscriptionToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _TgstatSubscription &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.keyword, keyword) || other.keyword == keyword));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, keyword);
+
+  @override
+  String toString() {
+    return 'TgstatSubscription(id: $id, keyword: $keyword)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$TgstatSubscriptionCopyWith<$Res>
+    implements $TgstatSubscriptionCopyWith<$Res> {
+  factory _$TgstatSubscriptionCopyWith(
+          _TgstatSubscription value, $Res Function(_TgstatSubscription) _then) =
+      __$TgstatSubscriptionCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'subscription_id') int id,
+      @JsonKey(name: 'keyword') TgstatSubscriptionKeyword keyword});
+
+  @override
+  $TgstatSubscriptionKeywordCopyWith<$Res> get keyword;
+}
+
+/// @nodoc
+class __$TgstatSubscriptionCopyWithImpl<$Res>
+    implements _$TgstatSubscriptionCopyWith<$Res> {
+  __$TgstatSubscriptionCopyWithImpl(this._self, this._then);
+
+  final _TgstatSubscription _self;
+  final $Res Function(_TgstatSubscription) _then;
+
+  /// Create a copy of TgstatSubscription
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? keyword = null,
+  }) {
+    return _then(_TgstatSubscription(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      keyword: null == keyword
+          ? _self.keyword
+          : keyword // ignore: cast_nullable_to_non_nullable
+              as TgstatSubscriptionKeyword,
+    ));
+  }
+
+  /// Create a copy of TgstatSubscription
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TgstatSubscriptionKeywordCopyWith<$Res> get keyword {
+    return $TgstatSubscriptionKeywordCopyWith<$Res>(_self.keyword, (value) {
+      return _then(_self.copyWith(keyword: value));
+    });
+  }
+}
+
+// dart format on

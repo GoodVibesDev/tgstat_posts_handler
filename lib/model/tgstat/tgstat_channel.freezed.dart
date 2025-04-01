@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,151 +10,32 @@ part of 'tgstat_channel.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-TgstatChannel _$TgstatChannelFromJson(Map<String, dynamic> json) {
-  return _TgstatChannel.fromJson(json);
-}
 
 /// @nodoc
 mixin _$TgstatChannel {
   @JsonKey(name: 'tg_id')
-  int get tgId => throw _privateConstructorUsedError;
-  String get link => throw _privateConstructorUsedError;
-  int get id => throw _privateConstructorUsedError;
-
-  /// Serializes this TgstatChannel to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int get tgId;
+  String get link;
+  int get id;
 
   /// Create a copy of TgstatChannel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $TgstatChannelCopyWith<TgstatChannel> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$TgstatChannelCopyWithImpl<TgstatChannel>(
+          this as TgstatChannel, _$identity);
 
-/// @nodoc
-abstract class $TgstatChannelCopyWith<$Res> {
-  factory $TgstatChannelCopyWith(
-          TgstatChannel value, $Res Function(TgstatChannel) then) =
-      _$TgstatChannelCopyWithImpl<$Res, TgstatChannel>;
-  @useResult
-  $Res call({@JsonKey(name: 'tg_id') int tgId, String link, int id});
-}
-
-/// @nodoc
-class _$TgstatChannelCopyWithImpl<$Res, $Val extends TgstatChannel>
-    implements $TgstatChannelCopyWith<$Res> {
-  _$TgstatChannelCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of TgstatChannel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? tgId = null,
-    Object? link = null,
-    Object? id = null,
-  }) {
-    return _then(_value.copyWith(
-      tgId: null == tgId
-          ? _value.tgId
-          : tgId // ignore: cast_nullable_to_non_nullable
-              as int,
-      link: null == link
-          ? _value.link
-          : link // ignore: cast_nullable_to_non_nullable
-              as String,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$TgstatChannelImplCopyWith<$Res>
-    implements $TgstatChannelCopyWith<$Res> {
-  factory _$$TgstatChannelImplCopyWith(
-          _$TgstatChannelImpl value, $Res Function(_$TgstatChannelImpl) then) =
-      __$$TgstatChannelImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({@JsonKey(name: 'tg_id') int tgId, String link, int id});
-}
-
-/// @nodoc
-class __$$TgstatChannelImplCopyWithImpl<$Res>
-    extends _$TgstatChannelCopyWithImpl<$Res, _$TgstatChannelImpl>
-    implements _$$TgstatChannelImplCopyWith<$Res> {
-  __$$TgstatChannelImplCopyWithImpl(
-      _$TgstatChannelImpl _value, $Res Function(_$TgstatChannelImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of TgstatChannel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? tgId = null,
-    Object? link = null,
-    Object? id = null,
-  }) {
-    return _then(_$TgstatChannelImpl(
-      tgId: null == tgId
-          ? _value.tgId
-          : tgId // ignore: cast_nullable_to_non_nullable
-              as int,
-      link: null == link
-          ? _value.link
-          : link // ignore: cast_nullable_to_non_nullable
-              as String,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$TgstatChannelImpl implements _TgstatChannel {
-  const _$TgstatChannelImpl(
-      {@JsonKey(name: 'tg_id') required this.tgId,
-      required this.link,
-      required this.id});
-
-  factory _$TgstatChannelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TgstatChannelImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'tg_id')
-  final int tgId;
-  @override
-  final String link;
-  @override
-  final int id;
-
-  @override
-  String toString() {
-    return 'TgstatChannel(tgId: $tgId, link: $link, id: $id)';
-  }
+  /// Serializes this TgstatChannel to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TgstatChannelImpl &&
+            other is TgstatChannel &&
             (identical(other.tgId, tgId) || other.tgId == tgId) &&
             (identical(other.link, link) || other.link == link) &&
             (identical(other.id, id) || other.id == id));
@@ -163,43 +45,151 @@ class _$TgstatChannelImpl implements _TgstatChannel {
   @override
   int get hashCode => Object.hash(runtimeType, tgId, link, id);
 
-  /// Create a copy of TgstatChannel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$TgstatChannelImplCopyWith<_$TgstatChannelImpl> get copyWith =>
-      __$$TgstatChannelImplCopyWithImpl<_$TgstatChannelImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TgstatChannelImplToJson(
-      this,
-    );
+  String toString() {
+    return 'TgstatChannel(tgId: $tgId, link: $link, id: $id)';
   }
 }
 
-abstract class _TgstatChannel implements TgstatChannel {
-  const factory _TgstatChannel(
-      {@JsonKey(name: 'tg_id') required final int tgId,
-      required final String link,
-      required final int id}) = _$TgstatChannelImpl;
+/// @nodoc
+abstract mixin class $TgstatChannelCopyWith<$Res> {
+  factory $TgstatChannelCopyWith(
+          TgstatChannel value, $Res Function(TgstatChannel) _then) =
+      _$TgstatChannelCopyWithImpl;
+  @useResult
+  $Res call({@JsonKey(name: 'tg_id') int tgId, String link, int id});
+}
 
-  factory _TgstatChannel.fromJson(Map<String, dynamic> json) =
-      _$TgstatChannelImpl.fromJson;
+/// @nodoc
+class _$TgstatChannelCopyWithImpl<$Res>
+    implements $TgstatChannelCopyWith<$Res> {
+  _$TgstatChannelCopyWithImpl(this._self, this._then);
+
+  final TgstatChannel _self;
+  final $Res Function(TgstatChannel) _then;
+
+  /// Create a copy of TgstatChannel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? tgId = null,
+    Object? link = null,
+    Object? id = null,
+  }) {
+    return _then(_self.copyWith(
+      tgId: null == tgId
+          ? _self.tgId
+          : tgId // ignore: cast_nullable_to_non_nullable
+              as int,
+      link: null == link
+          ? _self.link
+          : link // ignore: cast_nullable_to_non_nullable
+              as String,
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _TgstatChannel implements TgstatChannel {
+  const _TgstatChannel(
+      {@JsonKey(name: 'tg_id') required this.tgId,
+      required this.link,
+      required this.id});
+  factory _TgstatChannel.fromJson(Map<String, dynamic> json) =>
+      _$TgstatChannelFromJson(json);
 
   @override
   @JsonKey(name: 'tg_id')
-  int get tgId;
+  final int tgId;
   @override
-  String get link;
+  final String link;
   @override
-  int get id;
+  final int id;
 
   /// Create a copy of TgstatChannel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TgstatChannelImplCopyWith<_$TgstatChannelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$TgstatChannelCopyWith<_TgstatChannel> get copyWith =>
+      __$TgstatChannelCopyWithImpl<_TgstatChannel>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TgstatChannelToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _TgstatChannel &&
+            (identical(other.tgId, tgId) || other.tgId == tgId) &&
+            (identical(other.link, link) || other.link == link) &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, tgId, link, id);
+
+  @override
+  String toString() {
+    return 'TgstatChannel(tgId: $tgId, link: $link, id: $id)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$TgstatChannelCopyWith<$Res>
+    implements $TgstatChannelCopyWith<$Res> {
+  factory _$TgstatChannelCopyWith(
+          _TgstatChannel value, $Res Function(_TgstatChannel) _then) =
+      __$TgstatChannelCopyWithImpl;
+  @override
+  @useResult
+  $Res call({@JsonKey(name: 'tg_id') int tgId, String link, int id});
+}
+
+/// @nodoc
+class __$TgstatChannelCopyWithImpl<$Res>
+    implements _$TgstatChannelCopyWith<$Res> {
+  __$TgstatChannelCopyWithImpl(this._self, this._then);
+
+  final _TgstatChannel _self;
+  final $Res Function(_TgstatChannel) _then;
+
+  /// Create a copy of TgstatChannel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? tgId = null,
+    Object? link = null,
+    Object? id = null,
+  }) {
+    return _then(_TgstatChannel(
+      tgId: null == tgId
+          ? _self.tgId
+          : tgId // ignore: cast_nullable_to_non_nullable
+              as int,
+      link: null == link
+          ? _self.link
+          : link // ignore: cast_nullable_to_non_nullable
+              as String,
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+// dart format on

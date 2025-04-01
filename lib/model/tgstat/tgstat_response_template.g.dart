@@ -6,16 +6,16 @@ part of 'tgstat_response_template.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TgstatResponseTemplateImpl _$$TgstatResponseTemplateImplFromJson(
+_TgstatResponseTemplate _$TgstatResponseTemplateFromJson(
         Map<String, dynamic> json) =>
-    _$TgstatResponseTemplateImpl(
+    _TgstatResponseTemplate(
       status: json['status'] as String,
       response: json['response'],
       error: json['error'] as String?,
     );
 
-Map<String, dynamic> _$$TgstatResponseTemplateImplToJson(
-        _$TgstatResponseTemplateImpl instance) =>
+Map<String, dynamic> _$TgstatResponseTemplateToJson(
+        _TgstatResponseTemplate instance) =>
     <String, dynamic>{
       'status': instance.status,
       'response': instance.response,

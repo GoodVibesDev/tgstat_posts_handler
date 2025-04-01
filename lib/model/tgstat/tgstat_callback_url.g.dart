@@ -6,14 +6,12 @@ part of 'tgstat_callback_url.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TgstatCallbackUrlImpl _$$TgstatCallbackUrlImplFromJson(
-        Map<String, dynamic> json) =>
-    _$TgstatCallbackUrlImpl(
+_TgstatCallbackUrl _$TgstatCallbackUrlFromJson(Map<String, dynamic> json) =>
+    _TgstatCallbackUrl(
       code: json['verify_code'] as String,
     );
 
-Map<String, dynamic> _$$TgstatCallbackUrlImplToJson(
-        _$TgstatCallbackUrlImpl instance) =>
+Map<String, dynamic> _$TgstatCallbackUrlToJson(_TgstatCallbackUrl instance) =>
     <String, dynamic>{
       'verify_code': instance.code,
     };

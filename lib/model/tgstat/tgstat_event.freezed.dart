@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,37 +10,53 @@ part of 'tgstat_event.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-TgstatEvent _$TgstatEventFromJson(Map<String, dynamic> json) {
-  return _TgstatEvent.fromJson(json);
-}
 
 /// @nodoc
 mixin _$TgstatEvent {
-  TgstatPost get post => throw _privateConstructorUsedError;
-  List<TgstatChannel> get channels => throw _privateConstructorUsedError;
+  TgstatPost get post;
+  List<TgstatChannel> get channels;
   @JsonKey(name: 'subscription_id')
-  int get subscriptionId => throw _privateConstructorUsedError;
-
-  /// Serializes this TgstatEvent to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int get subscriptionId;
 
   /// Create a copy of TgstatEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $TgstatEventCopyWith<TgstatEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$TgstatEventCopyWithImpl<TgstatEvent>(this as TgstatEvent, _$identity);
+
+  /// Serializes this TgstatEvent to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is TgstatEvent &&
+            (identical(other.post, post) || other.post == post) &&
+            const DeepCollectionEquality().equals(other.channels, channels) &&
+            (identical(other.subscriptionId, subscriptionId) ||
+                other.subscriptionId == subscriptionId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, post,
+      const DeepCollectionEquality().hash(channels), subscriptionId);
+
+  @override
+  String toString() {
+    return 'TgstatEvent(post: $post, channels: $channels, subscriptionId: $subscriptionId)';
+  }
 }
 
 /// @nodoc
-abstract class $TgstatEventCopyWith<$Res> {
+abstract mixin class $TgstatEventCopyWith<$Res> {
   factory $TgstatEventCopyWith(
-          TgstatEvent value, $Res Function(TgstatEvent) then) =
-      _$TgstatEventCopyWithImpl<$Res, TgstatEvent>;
+          TgstatEvent value, $Res Function(TgstatEvent) _then) =
+      _$TgstatEventCopyWithImpl;
   @useResult
   $Res call(
       {TgstatPost post,
@@ -50,14 +67,11 @@ abstract class $TgstatEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TgstatEventCopyWithImpl<$Res, $Val extends TgstatEvent>
-    implements $TgstatEventCopyWith<$Res> {
-  _$TgstatEventCopyWithImpl(this._value, this._then);
+class _$TgstatEventCopyWithImpl<$Res> implements $TgstatEventCopyWith<$Res> {
+  _$TgstatEventCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final TgstatEvent _self;
+  final $Res Function(TgstatEvent) _then;
 
   /// Create a copy of TgstatEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -68,20 +82,20 @@ class _$TgstatEventCopyWithImpl<$Res, $Val extends TgstatEvent>
     Object? channels = null,
     Object? subscriptionId = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       post: null == post
-          ? _value.post
+          ? _self.post
           : post // ignore: cast_nullable_to_non_nullable
               as TgstatPost,
       channels: null == channels
-          ? _value.channels
+          ? _self.channels
           : channels // ignore: cast_nullable_to_non_nullable
               as List<TgstatChannel>,
       subscriptionId: null == subscriptionId
-          ? _value.subscriptionId
+          ? _self.subscriptionId
           : subscriptionId // ignore: cast_nullable_to_non_nullable
               as int,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of TgstatEvent
@@ -89,74 +103,22 @@ class _$TgstatEventCopyWithImpl<$Res, $Val extends TgstatEvent>
   @override
   @pragma('vm:prefer-inline')
   $TgstatPostCopyWith<$Res> get post {
-    return $TgstatPostCopyWith<$Res>(_value.post, (value) {
-      return _then(_value.copyWith(post: value) as $Val);
+    return $TgstatPostCopyWith<$Res>(_self.post, (value) {
+      return _then(_self.copyWith(post: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$TgstatEventImplCopyWith<$Res>
-    implements $TgstatEventCopyWith<$Res> {
-  factory _$$TgstatEventImplCopyWith(
-          _$TgstatEventImpl value, $Res Function(_$TgstatEventImpl) then) =
-      __$$TgstatEventImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {TgstatPost post,
-      List<TgstatChannel> channels,
-      @JsonKey(name: 'subscription_id') int subscriptionId});
-
-  @override
-  $TgstatPostCopyWith<$Res> get post;
-}
-
-/// @nodoc
-class __$$TgstatEventImplCopyWithImpl<$Res>
-    extends _$TgstatEventCopyWithImpl<$Res, _$TgstatEventImpl>
-    implements _$$TgstatEventImplCopyWith<$Res> {
-  __$$TgstatEventImplCopyWithImpl(
-      _$TgstatEventImpl _value, $Res Function(_$TgstatEventImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of TgstatEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? post = null,
-    Object? channels = null,
-    Object? subscriptionId = null,
-  }) {
-    return _then(_$TgstatEventImpl(
-      post: null == post
-          ? _value.post
-          : post // ignore: cast_nullable_to_non_nullable
-              as TgstatPost,
-      channels: null == channels
-          ? _value._channels
-          : channels // ignore: cast_nullable_to_non_nullable
-              as List<TgstatChannel>,
-      subscriptionId: null == subscriptionId
-          ? _value.subscriptionId
-          : subscriptionId // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$TgstatEventImpl implements _TgstatEvent {
-  const _$TgstatEventImpl(
+class _TgstatEvent implements TgstatEvent {
+  const _TgstatEvent(
       {required this.post,
       required final List<TgstatChannel> channels,
       @JsonKey(name: 'subscription_id') required this.subscriptionId})
       : _channels = channels;
-
-  factory _$TgstatEventImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TgstatEventImplFromJson(json);
+  factory _TgstatEvent.fromJson(Map<String, dynamic> json) =>
+      _$TgstatEventFromJson(json);
 
   @override
   final TgstatPost post;
@@ -172,16 +134,26 @@ class _$TgstatEventImpl implements _TgstatEvent {
   @JsonKey(name: 'subscription_id')
   final int subscriptionId;
 
+  /// Create a copy of TgstatEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'TgstatEvent(post: $post, channels: $channels, subscriptionId: $subscriptionId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TgstatEventCopyWith<_TgstatEvent> get copyWith =>
+      __$TgstatEventCopyWithImpl<_TgstatEvent>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TgstatEventToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TgstatEventImpl &&
+            other is _TgstatEvent &&
             (identical(other.post, post) || other.post == post) &&
             const DeepCollectionEquality().equals(other._channels, _channels) &&
             (identical(other.subscriptionId, subscriptionId) ||
@@ -193,44 +165,70 @@ class _$TgstatEventImpl implements _TgstatEvent {
   int get hashCode => Object.hash(runtimeType, post,
       const DeepCollectionEquality().hash(_channels), subscriptionId);
 
-  /// Create a copy of TgstatEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$TgstatEventImplCopyWith<_$TgstatEventImpl> get copyWith =>
-      __$$TgstatEventImplCopyWithImpl<_$TgstatEventImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TgstatEventImplToJson(
-      this,
-    );
+  String toString() {
+    return 'TgstatEvent(post: $post, channels: $channels, subscriptionId: $subscriptionId)';
   }
 }
 
-abstract class _TgstatEvent implements TgstatEvent {
-  const factory _TgstatEvent(
-      {required final TgstatPost post,
-      required final List<TgstatChannel> channels,
-      @JsonKey(name: 'subscription_id')
-      required final int subscriptionId}) = _$TgstatEventImpl;
+/// @nodoc
+abstract mixin class _$TgstatEventCopyWith<$Res>
+    implements $TgstatEventCopyWith<$Res> {
+  factory _$TgstatEventCopyWith(
+          _TgstatEvent value, $Res Function(_TgstatEvent) _then) =
+      __$TgstatEventCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {TgstatPost post,
+      List<TgstatChannel> channels,
+      @JsonKey(name: 'subscription_id') int subscriptionId});
 
-  factory _TgstatEvent.fromJson(Map<String, dynamic> json) =
-      _$TgstatEventImpl.fromJson;
+  @override
+  $TgstatPostCopyWith<$Res> get post;
+}
 
-  @override
-  TgstatPost get post;
-  @override
-  List<TgstatChannel> get channels;
-  @override
-  @JsonKey(name: 'subscription_id')
-  int get subscriptionId;
+/// @nodoc
+class __$TgstatEventCopyWithImpl<$Res> implements _$TgstatEventCopyWith<$Res> {
+  __$TgstatEventCopyWithImpl(this._self, this._then);
+
+  final _TgstatEvent _self;
+  final $Res Function(_TgstatEvent) _then;
 
   /// Create a copy of TgstatEvent
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TgstatEventImplCopyWith<_$TgstatEventImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? post = null,
+    Object? channels = null,
+    Object? subscriptionId = null,
+  }) {
+    return _then(_TgstatEvent(
+      post: null == post
+          ? _self.post
+          : post // ignore: cast_nullable_to_non_nullable
+              as TgstatPost,
+      channels: null == channels
+          ? _self._channels
+          : channels // ignore: cast_nullable_to_non_nullable
+              as List<TgstatChannel>,
+      subscriptionId: null == subscriptionId
+          ? _self.subscriptionId
+          : subscriptionId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+
+  /// Create a copy of TgstatEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TgstatPostCopyWith<$Res> get post {
+    return $TgstatPostCopyWith<$Res>(_self.post, (value) {
+      return _then(_self.copyWith(post: value));
+    });
+  }
 }
+
+// dart format on

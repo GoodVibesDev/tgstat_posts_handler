@@ -6,8 +6,7 @@ part of 'tgstat_post.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TgstatPostImpl _$$TgstatPostImplFromJson(Map<String, dynamic> json) =>
-    _$TgstatPostImpl(
+_TgstatPost _$TgstatPostFromJson(Map<String, dynamic> json) => _TgstatPost(
       date: const EpochDateTimeConverter()
           .fromJson((json['date'] as num).toInt()),
       link: json['link'] as String,
@@ -16,7 +15,7 @@ _$TgstatPostImpl _$$TgstatPostImplFromJson(Map<String, dynamic> json) =>
       forwardedFrom: (json['forwarded_from'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$TgstatPostImplToJson(_$TgstatPostImpl instance) =>
+Map<String, dynamic> _$TgstatPostToJson(_TgstatPost instance) =>
     <String, dynamic>{
       'date': const EpochDateTimeConverter().toJson(instance.date),
       'link': instance.link,

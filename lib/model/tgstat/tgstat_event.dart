@@ -6,7 +6,7 @@ part 'tgstat_event.freezed.dart';
 part 'tgstat_event.g.dart';
 
 @freezed
-class TgstatEvent with _$TgstatEvent {
+sealed class TgstatEvent with _$TgstatEvent {
   const factory TgstatEvent({
     required TgstatPost post,
     required List<TgstatChannel> channels,
