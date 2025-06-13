@@ -20,6 +20,10 @@ class PostHandler {
       final event =
           TgstatEvent.fromJson(jsonDecode(body) as Map<String, Object?>);
 
+      _logger.i(
+        'Got post from channel. tgId - ${event.channels.firstOrNull?.tgId}',
+      );
+
       if (await _processForwardedOrCopied(event)) return;
 
       final postSubscription =
