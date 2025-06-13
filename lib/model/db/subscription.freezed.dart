@@ -22,6 +22,7 @@ mixin _$Subscription {
   String? get theme;
   int? get monitorGroupId;
   List<int>? get mailingList;
+  List<TrackedChannel>? get trackedChannels;
 
   /// Create a copy of Subscription
   /// with the given fields replaced by the non-null parameter values.
@@ -45,7 +46,9 @@ mixin _$Subscription {
             (identical(other.monitorGroupId, monitorGroupId) ||
                 other.monitorGroupId == monitorGroupId) &&
             const DeepCollectionEquality()
-                .equals(other.mailingList, mailingList));
+                .equals(other.mailingList, mailingList) &&
+            const DeepCollectionEquality()
+                .equals(other.trackedChannels, trackedChannels));
   }
 
   @override
@@ -57,11 +60,12 @@ mixin _$Subscription {
       subscriptionId,
       theme,
       monitorGroupId,
-      const DeepCollectionEquality().hash(mailingList));
+      const DeepCollectionEquality().hash(mailingList),
+      const DeepCollectionEquality().hash(trackedChannels));
 
   @override
   String toString() {
-    return 'Subscription(keyword: $keyword, active: $active, id: $id, subscriptionId: $subscriptionId, theme: $theme, monitorGroupId: $monitorGroupId, mailingList: $mailingList)';
+    return 'Subscription(keyword: $keyword, active: $active, id: $id, subscriptionId: $subscriptionId, theme: $theme, monitorGroupId: $monitorGroupId, mailingList: $mailingList, trackedChannels: $trackedChannels)';
   }
 }
 
@@ -78,7 +82,8 @@ abstract mixin class $SubscriptionCopyWith<$Res> {
       int? subscriptionId,
       String? theme,
       int? monitorGroupId,
-      List<int>? mailingList});
+      List<int>? mailingList,
+      List<TrackedChannel>? trackedChannels});
 }
 
 /// @nodoc
@@ -100,6 +105,7 @@ class _$SubscriptionCopyWithImpl<$Res> implements $SubscriptionCopyWith<$Res> {
     Object? theme = freezed,
     Object? monitorGroupId = freezed,
     Object? mailingList = freezed,
+    Object? trackedChannels = freezed,
   }) {
     return _then(_self.copyWith(
       keyword: null == keyword
@@ -130,6 +136,10 @@ class _$SubscriptionCopyWithImpl<$Res> implements $SubscriptionCopyWith<$Res> {
           ? _self.mailingList
           : mailingList // ignore: cast_nullable_to_non_nullable
               as List<int>?,
+      trackedChannels: freezed == trackedChannels
+          ? _self.trackedChannels
+          : trackedChannels // ignore: cast_nullable_to_non_nullable
+              as List<TrackedChannel>?,
     ));
   }
 }
@@ -144,8 +154,10 @@ class _Subscription implements Subscription {
       this.subscriptionId,
       this.theme,
       this.monitorGroupId,
-      final List<int>? mailingList})
-      : _mailingList = mailingList;
+      final List<int>? mailingList,
+      final List<TrackedChannel>? trackedChannels})
+      : _mailingList = mailingList,
+        _trackedChannels = trackedChannels;
 
   @override
   final String keyword;
@@ -165,6 +177,16 @@ class _Subscription implements Subscription {
     final value = _mailingList;
     if (value == null) return null;
     if (_mailingList is EqualUnmodifiableListView) return _mailingList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<TrackedChannel>? _trackedChannels;
+  @override
+  List<TrackedChannel>? get trackedChannels {
+    final value = _trackedChannels;
+    if (value == null) return null;
+    if (_trackedChannels is EqualUnmodifiableListView) return _trackedChannels;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -191,7 +213,9 @@ class _Subscription implements Subscription {
             (identical(other.monitorGroupId, monitorGroupId) ||
                 other.monitorGroupId == monitorGroupId) &&
             const DeepCollectionEquality()
-                .equals(other._mailingList, _mailingList));
+                .equals(other._mailingList, _mailingList) &&
+            const DeepCollectionEquality()
+                .equals(other._trackedChannels, _trackedChannels));
   }
 
   @override
@@ -203,11 +227,12 @@ class _Subscription implements Subscription {
       subscriptionId,
       theme,
       monitorGroupId,
-      const DeepCollectionEquality().hash(_mailingList));
+      const DeepCollectionEquality().hash(_mailingList),
+      const DeepCollectionEquality().hash(_trackedChannels));
 
   @override
   String toString() {
-    return 'Subscription(keyword: $keyword, active: $active, id: $id, subscriptionId: $subscriptionId, theme: $theme, monitorGroupId: $monitorGroupId, mailingList: $mailingList)';
+    return 'Subscription(keyword: $keyword, active: $active, id: $id, subscriptionId: $subscriptionId, theme: $theme, monitorGroupId: $monitorGroupId, mailingList: $mailingList, trackedChannels: $trackedChannels)';
   }
 }
 
@@ -226,7 +251,8 @@ abstract mixin class _$SubscriptionCopyWith<$Res>
       int? subscriptionId,
       String? theme,
       int? monitorGroupId,
-      List<int>? mailingList});
+      List<int>? mailingList,
+      List<TrackedChannel>? trackedChannels});
 }
 
 /// @nodoc
@@ -249,6 +275,7 @@ class __$SubscriptionCopyWithImpl<$Res>
     Object? theme = freezed,
     Object? monitorGroupId = freezed,
     Object? mailingList = freezed,
+    Object? trackedChannels = freezed,
   }) {
     return _then(_Subscription(
       keyword: null == keyword
@@ -279,6 +306,10 @@ class __$SubscriptionCopyWithImpl<$Res>
           ? _self._mailingList
           : mailingList // ignore: cast_nullable_to_non_nullable
               as List<int>?,
+      trackedChannels: freezed == trackedChannels
+          ? _self._trackedChannels
+          : trackedChannels // ignore: cast_nullable_to_non_nullable
+              as List<TrackedChannel>?,
     ));
   }
 }

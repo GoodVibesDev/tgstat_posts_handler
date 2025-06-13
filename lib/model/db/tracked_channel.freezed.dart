@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$TrackedChannel {
-  String? get tgId;
+  int? get tgId;
   String? get link;
   String? get description;
 
@@ -26,6 +26,9 @@ mixin _$TrackedChannel {
   $TrackedChannelCopyWith<TrackedChannel> get copyWith =>
       _$TrackedChannelCopyWithImpl<TrackedChannel>(
           this as TrackedChannel, _$identity);
+
+  /// Serializes this TrackedChannel to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
@@ -38,6 +41,7 @@ mixin _$TrackedChannel {
                 other.description == description));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, tgId, link, description);
 
@@ -53,7 +57,7 @@ abstract mixin class $TrackedChannelCopyWith<$Res> {
           TrackedChannel value, $Res Function(TrackedChannel) _then) =
       _$TrackedChannelCopyWithImpl;
   @useResult
-  $Res call({String? tgId, String? link, String? description});
+  $Res call({int? tgId, String? link, String? description});
 }
 
 /// @nodoc
@@ -77,7 +81,7 @@ class _$TrackedChannelCopyWithImpl<$Res>
       tgId: freezed == tgId
           ? _self.tgId
           : tgId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       link: freezed == link
           ? _self.link
           : link // ignore: cast_nullable_to_non_nullable
@@ -91,12 +95,14 @@ class _$TrackedChannelCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _TrackedChannel implements TrackedChannel {
   _TrackedChannel({this.tgId, this.link, this.description});
+  factory _TrackedChannel.fromJson(Map<String, dynamic> json) =>
+      _$TrackedChannelFromJson(json);
 
   @override
-  final String? tgId;
+  final int? tgId;
   @override
   final String? link;
   @override
@@ -111,6 +117,13 @@ class _TrackedChannel implements TrackedChannel {
       __$TrackedChannelCopyWithImpl<_TrackedChannel>(this, _$identity);
 
   @override
+  Map<String, dynamic> toJson() {
+    return _$TrackedChannelToJson(
+      this,
+    );
+  }
+
+  @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
@@ -121,6 +134,7 @@ class _TrackedChannel implements TrackedChannel {
                 other.description == description));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, tgId, link, description);
 
@@ -138,7 +152,7 @@ abstract mixin class _$TrackedChannelCopyWith<$Res>
       __$TrackedChannelCopyWithImpl;
   @override
   @useResult
-  $Res call({String? tgId, String? link, String? description});
+  $Res call({int? tgId, String? link, String? description});
 }
 
 /// @nodoc
@@ -162,7 +176,7 @@ class __$TrackedChannelCopyWithImpl<$Res>
       tgId: freezed == tgId
           ? _self.tgId
           : tgId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       link: freezed == link
           ? _self.link
           : link // ignore: cast_nullable_to_non_nullable

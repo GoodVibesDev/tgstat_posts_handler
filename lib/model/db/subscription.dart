@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:tgstat_posts_handler/model/db/db.dart';
 
 part 'subscription.freezed.dart';
 
@@ -12,5 +13,6 @@ sealed class Subscription with _$Subscription {
     String? theme,
     int? monitorGroupId,
     List<int>? mailingList,
+    List<TrackedChannel>? trackedChannels,
   }) = _Subscription;
 }

@@ -24,14 +24,23 @@ class PostHandler {
         'Got post from channel. tgId - ${event.channels.firstOrNull?.tgId}',
       );
 
-      if (await _processForwardedOrCopied(event)) return;
-
       final postSubscription =
           await _database.findSubscriptionById(event.subscriptionId);
 
       // Если null, то скорей всего получили пост с подписки, которую сейчас
       // не используем и ее айди просто находится в кеше
       if (postSubscription == null) return;
+
+      // Если указаны каналы, то фильтруем по каналам и дубликаты отсекать
+      // не нужно
+      // Если же каналов нету, то и фильтровать по ним не нужно
+      if (postSubscription.trackedChannels?.isEmpty ?? true) {
+        if (await _processForwardedOrCopied(event)) return;
+      } else {
+        if (!_fromTrackedChannel(event, postSubscription)) {
+          return;
+        }
+      }
 
       var channel =
           await _database.findChannelByTgId(event.channels.first.tgId);
@@ -78,6 +87,24 @@ class PostHandler {
         stackTrace: stackTrace,
       );
     }
+  }
+
+  bool _fromTrackedChannel(TgstatEvent event, Subscription subscription) {
+    final eventChannelsIds =
+        event.channels.map((channel) => channel.tgId).toSet();
+    final eventChannelsLinks =
+        event.channels.map((channel) => channel.link).toSet();
+
+    final trackedChannelsIds =
+        subscription.trackedChannels?.map((channel) => channel.tgId).toSet() ??
+            {};
+
+    final trackedChannelsLinks =
+        subscription.trackedChannels?.map((channel) => channel.link).toSet() ??
+            {};
+
+    return eventChannelsIds.intersection(trackedChannelsIds).isNotEmpty ||
+        eventChannelsLinks.intersection(trackedChannelsLinks).isNotEmpty;
   }
 
   Future<bool> _processForwardedOrCopied(TgstatEvent event) async {

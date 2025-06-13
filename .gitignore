@@ -16,3 +16,4 @@ build/
 coverage/
 
 *.env
+*.envrc

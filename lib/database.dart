@@ -56,12 +56,20 @@ class Database {
     final result = await (await _getConnection()).execute(
       'SELECT '
       'keyword, active, id, "subscriptionId", '
-      'theme, "monitorGroupId", "mailingList" '
+      'theme, "monitorGroupId", "mailingList", "trackedChannels" '
       'FROM public.disabled_subscriptions '
       'WHERE "subscriptionId" = $subscriptionId',
     );
     final row = result.firstOrNull;
     if (row == null) return null;
+
+    List<TrackedChannel>? trackedChannels;
+    if (row[7] != null) {
+      final jsonList = row[7] as List<dynamic>?;
+      trackedChannels = jsonList
+          ?.map((item) => TrackedChannel.fromJson(item as Map<String, dynamic>))
+          .toList();
+    }
 
     return Subscription(
       keyword: row[0]! as String,
@@ -71,6 +79,7 @@ class Database {
       theme: row[4] as String?,
       monitorGroupId: row[5] as int?,
       mailingList: (row[6] as List?)?.cast<int>(),
+      trackedChannels: trackedChannels,
     );
   }
 
